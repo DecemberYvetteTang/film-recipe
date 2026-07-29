@@ -6,14 +6,14 @@ export type SampleImageSourceType = "我拍摄" | "作者参考图";
 
 export interface SampleImage {
   id: string;
-  dataUrl: string;
+  assetId: string;
   sourceType: SampleImageSourceType;
   caption?: string;
 }
 
 export interface SourceScreenshot {
   id: string;
-  dataUrl: string;
+  assetId: string;
   ocrText?: string;
   capturedAt: string;
 }
