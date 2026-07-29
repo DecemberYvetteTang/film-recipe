@@ -1,6 +1,6 @@
 export type CameraBrand = "fuji" | "ricoh";
 
-export type RecipeStatus = "想试" | "喜欢" | "常用" | "翻车" | "未整理";
+export type RecipeStatus = "想试" | "常用";
 
 export type SampleImageSourceType = "我拍摄" | "作者参考图";
 
