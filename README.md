@@ -15,5 +15,6 @@ npm run build
 ## 文档
 
 - [产品设计文档](./docs/PRODUCT_DESIGN.md)
+- [第一版低保真原型](./docs/LOW_FIDELITY_PROTOTYPE.md)
 - [每日工作记录](./docs/DAILY_LOG.md)
 - [TODO](./docs/TODO.md)
