@@ -73,6 +73,8 @@ Film Recipe 是一个手机优先、本地存储、以样张快查为核心的�
 
 低保真页面流程见 [第一版低保真原型](./LOW_FIDELITY_PROTOTYPE.md)。
 
+UI 视觉方向见 [UI 设计方向](./UI_DESIGN_DIRECTION.md)。
+
 ## 7. 核心数据模型
 
 ```ts
