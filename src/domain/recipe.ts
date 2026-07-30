@@ -11,13 +11,6 @@ export interface SampleImage {
   caption?: string;
 }
 
-export interface SourceScreenshot {
-  id: string;
-  assetId: string;
-  ocrText?: string;
-  capturedAt: string;
-}
-
 export interface FujiParams {
   filmSimulation?: string;
   dynamicRange?: string;
@@ -66,8 +59,7 @@ export interface Recipe {
   styles: string[];
   status: RecipeStatus;
   sampleImages: SampleImage[];
-  sourceScreenshots: SourceScreenshot[];
-  ocrText: string;
+  ocrText?: string;
   params: FujiParams | RicohParams;
   notes: string;
   createdAt: string;

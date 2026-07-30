@@ -17,5 +17,6 @@ npm run build
 - [产品设计文档](./docs/PRODUCT_DESIGN.md)
 - [第一版低保真原型](./docs/LOW_FIDELITY_PROTOTYPE.md)
 - [UI 设计方向](./docs/UI_DESIGN_DIRECTION.md)
+- [UI 规范](./docs/UI_SPEC.md)
 - [每日工作记录](./docs/DAILY_LOG.md)
 - [TODO](./docs/TODO.md)
