@@ -1,9 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: ui-serif, "Songti SC", "Noto Serif CJK SC", serif;
+  --font-mono: "SF Mono", "Roboto Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
 :root {
-  color: #1c1b19;
-  background: #f7f5ef;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  --background: #f4f2ea;
+  --foreground: #161816;
+  --card: rgba(255, 253, 248, 0.72);
+  --card-foreground: #161816;
+  --popover: #fffdf8;
+  --popover-foreground: #161816;
+  --primary: #2f5f50;
+  --primary-foreground: #fffdf6;
+  --secondary: #f3efe6;
+  --secondary-foreground: #252721;
+  --muted: #ebe7dc;
+  --muted-foreground: #5d625d;
+  --accent: #c94335;
+  --accent-foreground: #fffdf6;
+  --destructive: #c94335;
+  --border: #d9d4c8;
+  --input: #d9d4c8;
+  --ring: #2f5f50;
+  --radius: 12px;
+
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,174 +72,25 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(30, 29, 26, 0.04), rgba(30, 29, 26, 0)),
-    #f7f5ef;
+    linear-gradient(180deg, rgba(22, 24, 22, 0.04), rgba(22, 24, 22, 0) 34%),
+    var(--background);
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
-.app-shell {
-  width: min(100%, 760px);
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+#root {
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.topbar {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 0 14px;
-}
-
-.eyebrow {
-  margin: 0 0 6px;
-  color: #706a5f;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-p {
-  margin-top: 0;
-}
-
-h1 {
-  margin-bottom: 0;
-  font-size: clamp(1.65rem, 8vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: 0;
-}
-
-h2 {
-  margin-bottom: 0;
-  font-size: 1rem;
-}
-
-.topbar-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.topbar-actions button,
-.primary-action,
-.brand-card,
-.chip {
-  border: 1px solid rgba(28, 27, 25, 0.14);
-  color: #1c1b19;
-  background: rgba(255, 255, 255, 0.68);
-}
-
-.topbar-actions button {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 8px;
-}
-
-.panel,
-.empty-state {
-  margin-top: 16px;
-  padding: 16px;
-  border: 1px solid rgba(28, 27, 25, 0.12);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.58);
-}
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.brand-card {
-  display: flex;
-  min-height: 92px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 8px;
-  padding: 14px;
-  text-align: left;
-}
-
-.brand-card span {
-  font-size: 1.15rem;
-  font-weight: 750;
-}
-
-.brand-card small {
-  color: #746f66;
-  line-height: 1.4;
-}
-
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip-group + .chip-group {
-  margin-top: 10px;
-}
-
-.chip {
-  min-height: 36px;
-  border-radius: 999px;
-  padding: 0 13px;
-}
-
-.empty-state {
-  display: grid;
-  min-height: 240px;
-  place-items: center;
-  text-align: center;
-}
-
-.empty-state p {
-  max-width: 23rem;
-  color: #706a5f;
-  line-height: 1.6;
-}
-
-.primary-action {
-  min-height: 42px;
-  border-color: #1c1b19;
-  border-radius: 8px;
-  padding: 0 16px;
-  background: #1c1b19;
-  color: #fffaf0;
-}
-
-@media (max-width: 520px) {
-  .app-shell {
-    padding: 16px;
-  }
-
-  .topbar {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .topbar-actions {
-    justify-content: flex-end;
-  }
-
-  .brand-grid {
-    grid-template-columns: 1fr;
-  }
 }

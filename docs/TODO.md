@@ -34,6 +34,10 @@
 - [x] 根据用户反馈继续打磨 Figma 初稿：品牌入口改为 Fuji / Ricoh Tab，底部导航改为圆角半透明悬浮样式
 - [x] 建立 UI 规范：字体、间距、组件圆角、阴影、边框和底部导航规则
 - [x] 收敛详情页信息：只保留样张、基本信息、参数和备注
+- [x] 确定前端组件基础：shadcn/ui 风格组件 + Radix UI + Tailwind CSS
+- [x] 接入 Tailwind v4、路径别名和 shadcn 组件目录约定
+- [x] 新增基础 UI 组件：Button、Card、Badge、Tabs
+- [x] 新增 Film Recipe 业务组件：BottomNav、RecipeCard
 
 ### 待确认
 
@@ -49,6 +53,7 @@
 - [ ] 是否接受参数值使用等宽字体
 - [ ] 是否接受 Contact Strip 作为标志性视觉元素
 - [ ] 高保真设计稿优先页面范围
+- [ ] React 高保真原型是否符合当前 UI 规范
 
 ### 待开发
 

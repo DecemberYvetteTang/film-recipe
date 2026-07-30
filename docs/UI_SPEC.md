@@ -217,6 +217,8 @@ Photo card:
 
 ## 9. 开发映射建议
 
+- 第一版采用 shadcn/ui 风格组件、Radix UI 和 Tailwind CSS 作为组件基础。
+- Ant Design 不作为主组件库，避免默认企业后台气质压过摄影笔记方向。
 - CSS spacing token：`--space-4` 到 `--space-40`。
 - Radius token：`--radius-photo`, `--radius-panel`, `--radius-pill`, `--radius-nav`。
 - Shadow token：`--shadow-soft`, `--shadow-nav`。
