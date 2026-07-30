@@ -1,5 +1,11 @@
 # Film Recipe UI 设计方向
 
+## Figma 文件
+
+- UI 初稿文件：[Film Recipe UI Draft](https://www.figma.com/design/b4cE1uGD9RrwC2Z7h4UYy1)
+- 初稿范围：快查页、配方详情页、新建配方页。
+- 生成日期：2026-07-30。
+
 ## 1. 设计结论
 
 第一版推荐方向：
