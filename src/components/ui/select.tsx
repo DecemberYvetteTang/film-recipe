@@ -36,7 +36,7 @@ export function Select({ className, groups, onValueChange, placeholder = "请选
       <button
         type="button"
         className={cn(
-          "flex h-12 w-full items-center justify-between gap-3 rounded-2xl border border-input bg-card px-4 text-left text-[16px] font-medium leading-6 text-foreground shadow-[0_8px_20px_rgba(20,18,14,0.06)] outline-none transition-colors",
+          "flex h-12 w-full items-center justify-between gap-3 rounded-xl border border-input bg-card px-4 text-left text-[16px] font-medium leading-6 text-foreground shadow-[0_8px_20px_rgba(20,18,14,0.06)] outline-none transition-colors",
           "focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/20",
           !selectedLabel && "text-muted-foreground"
         )}
@@ -49,7 +49,7 @@ export function Select({ className, groups, onValueChange, placeholder = "请选
 
       {isOpen ? (
         <div
-          className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 max-h-72 overflow-y-auto rounded-2xl border border-border bg-popover p-2 shadow-[0_18px_40px_rgba(20,18,14,0.18)]"
+          className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 max-h-72 overflow-y-auto rounded-xl border border-border bg-popover p-2 shadow-[0_18px_40px_rgba(20,18,14,0.18)]"
           role="listbox"
         >
           {groups.map((group) => (
