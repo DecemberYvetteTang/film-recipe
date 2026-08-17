@@ -133,7 +133,7 @@ export function NewRecipeView({
             className="sr-only"
             onChange={(event) => onSampleFileChange(event.target.files?.[0] ?? null)}
           />
-          <div className="flex gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="secondary" asChild>
               <label htmlFor="sample-file">
                 <Upload size={16} />
@@ -143,6 +143,7 @@ export function NewRecipeView({
             <ChipGroup
               items={sampleSourceTypes}
               activeItems={[form.sampleSourceType]}
+              size="button"
               onChange={(items) => updateForm("sampleSourceType", (items[0] ?? "作者参考图") as SampleImageSourceType)}
             />
           </div>
