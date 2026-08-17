@@ -195,18 +195,12 @@ export function NewRecipeView({
                 {group.fields.map((field) => (
                   <Field key={field.key} label={field.label}>
                     {form.brand === "fuji" && field.key === "filmSimulation" ? (
-                      <Select value={form.params[field.key] ?? ""} onChange={(event) => onParamChange(field.key, event.target.value)}>
-                        <option value="">选择胶片模拟</option>
-                        {fujiFilmSimulationGroups.map((simulationGroup) => (
-                          <optgroup key={simulationGroup.name} label={simulationGroup.name}>
-                            {simulationGroup.options.map((option) => (
-                              <option key={option} value={option}>
-                                {option}
-                              </option>
-                            ))}
-                          </optgroup>
-                        ))}
-                      </Select>
+                      <Select
+                        value={form.params[field.key] ?? ""}
+                        placeholder="选择胶片模拟"
+                        groups={fujiFilmSimulationGroups}
+                        onValueChange={(value) => onParamChange(field.key, value)}
+                      />
                     ) : (
                       <Input value={form.params[field.key] ?? ""} onChange={(event) => onParamChange(field.key, event.target.value)} />
                     )}
