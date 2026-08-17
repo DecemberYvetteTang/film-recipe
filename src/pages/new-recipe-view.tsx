@@ -4,9 +4,11 @@ import { Field } from "@/components/film-recipe/field";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { brandModels, sceneTags, styleTags, subjectTags } from "@/data/taxonomy";
+import { fujiFilmSimulationGroups } from "@/domain/fuji-film-simulations";
 import { groupParamFields } from "@/domain/param-fields";
 import type { CameraBrand, RecipeStatus, SampleImageSourceType } from "@/domain/recipe";
 import type { RecipeFormState } from "@/types/recipe-form";
@@ -192,7 +194,22 @@ export function NewRecipeView({
               <div className="mt-4 space-y-3">
                 {group.fields.map((field) => (
                   <Field key={field.key} label={field.label}>
-                    <Input value={form.params[field.key] ?? ""} onChange={(event) => onParamChange(field.key, event.target.value)} />
+                    {form.brand === "fuji" && field.key === "filmSimulation" ? (
+                      <Select value={form.params[field.key] ?? ""} onChange={(event) => onParamChange(field.key, event.target.value)}>
+                        <option value="">选择胶片模拟</option>
+                        {fujiFilmSimulationGroups.map((simulationGroup) => (
+                          <optgroup key={simulationGroup.name} label={simulationGroup.name}>
+                            {simulationGroup.options.map((option) => (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </Select>
+                    ) : (
+                      <Input value={form.params[field.key] ?? ""} onChange={(event) => onParamChange(field.key, event.target.value)} />
+                    )}
                   </Field>
                 ))}
               </div>
